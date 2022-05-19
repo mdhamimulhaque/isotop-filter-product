@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter products</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="product-filter">
+        <div class="product-menu">
+            <ul>
+                <li data-filter="*">All</li>
+                <li data-filter=".engineering">advertising</li>
+                <li data-filter=".productontwikkeling">Productontwikkeling</li>
+                <li data-filter=".rendering">Rendering</li>
+                <li data-filter="..Sterkteberekeningen">Sterkteberekeningen</li>
+             
+            </ul>
+        </div>
+        <div class="product-items">
+            <div class="product engineering rendering">
+                <img src="./img/1.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+            <div class="product productontwikkeling">
+                <img src="./img/2.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+            <div class="product advertising">
+                <img src="./img/1.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+            <div class="product Sterkteberekeningen">
+                <img src="./img/2.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+        <div class="product rendering ">
+                <img src="./img/1.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+            <div class="product rendering">
+                <img src="./img/2.jpg" alt="">
+                <div class="text">
+                    <h3>heading</h3>
+                    <p>Lorem ipsum dolo</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- isotop -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+        // init Isotope
+        var $grid = $('.product-items').isotope({
+            // options
+        });
+        // filter items on button click
+        $('.product-menu').on('click', 'li', function () {
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+        });
+    </script>
+</body>
+</html>
